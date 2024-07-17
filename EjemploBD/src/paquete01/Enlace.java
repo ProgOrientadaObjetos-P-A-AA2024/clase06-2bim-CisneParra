@@ -46,6 +46,7 @@ public class Enlace {
   
         try{  
             establecerConexion();
+            // Ciudad es el nombre de la tabla creada en la bd
             Statement statement = obtenerConexion().createStatement();
             String data = String.format("INSERT INTO Ciudad (nombre, poblacion) "
                     + "values ('%s', %d)", ciudad.obtenerNombre(), 
@@ -68,6 +69,8 @@ public class Enlace {
             
             ResultSet rs = statement.executeQuery(data);
             while(rs.next()){
+                // El getString se usa para traer la informacion y convertirla 
+                // en atributos para un objeto
                 Ciudad miCiudad = new Ciudad(rs.getString("nombre"),
                 rs.getInt("poblacion"));
                 lista.add(miCiudad);

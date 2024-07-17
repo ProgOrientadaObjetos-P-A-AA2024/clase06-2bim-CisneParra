@@ -14,13 +14,13 @@ import paquete02.Ciudad;
  * @author reroes
  */
 public class Principal {
-    
+
     public static void main(String[] args) throws SQLException {
         EnlaceDos c = new EnlaceDos();
-        Ciudad ciudad = new Ciudad("Cuenca", 100123);
+        Ciudad ciudad = new Ciudad("Zamora", 45136156);
         c.insertarCiudad(ciudad);
-        
         c.establecerListaCiudad();
+        
         for (int i = 0; i < c.obtenerListaCiudad().size(); i++) {
             System.out.printf("%s", c.obtenerListaCiudad().get(i));
         }
